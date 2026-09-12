@@ -5,87 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>209班 115-1 行事曆・一鍵加入</title>
 <style>
-  :root{
-    --ink:#1f2a24;
-    --paper:#f7f5ef;
-    --blue:#2d5a7a;
-    --blue-soft:#e3edf4;
-    --green:#2f6f4f;
-    --line:#d8d3c6;
-  }
+  :root{--ink:#1f2a24;--paper:#f7f5ef;--blue:#2d5a7a;--blue-soft:#e3edf4;--green:#2f6f4f;--line:#d8d3c6}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px 16px;
-  }
-  .card{
-    width:100%;
-    max-width:420px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 4px 16px rgba(0,0,0,.08);
-  }
-  .head{
-    background:var(--blue-soft);
-    padding:22px 20px 18px;
-    text-align:center;
-  }
-  .head .badge{
-    display:inline-block;
-    background:var(--blue);
-    color:#fff;
-    font-size:.8rem;
-    font-weight:700;
-    letter-spacing:.15em;
-    padding:4px 14px;
-    border-radius:999px;
-    margin-bottom:10px;
-  }
+  body{font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+  .card{width:100%;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+  .head{background:var(--blue-soft);padding:22px 20px 18px;text-align:center}
+  .badge{display:inline-block;background:var(--blue);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.15em;padding:4px 14px;border-radius:999px;margin-bottom:10px}
   .head h1{font-size:1.2rem;letter-spacing:.05em;color:var(--blue)}
   .head p{font-size:.85rem;color:#5b6b76;margin-top:6px}
-  .body{padding:20px 18px 24px;text-align:center}
-  .opt{
-    text-align:left;
-    border:1.5px solid var(--line);
-    border-radius:14px;
-    padding:14px 14px 16px;
-    margin-bottom:14px;
-  }
+  .body{padding:20px 18px 24px}
+  .opt{border:1.5px solid var(--line);border-radius:14px;padding:14px 14px 16px;margin-bottom:14px}
   .opt h3{font-size:.95rem;margin-bottom:4px}
   .opt p{font-size:.8rem;color:#6b6a60;margin-bottom:10px;line-height:1.6}
-  .btn{
-    display:block;
-    width:100%;
-    border:none;
-    color:#fff;
-    font-size:1rem;
-    font-weight:700;
-    letter-spacing:.05em;
-    padding:14px;
-    border-radius:12px;
-    cursor:pointer;
-    transition:transform .08s ease;
-  }
-  .btn:active{transform:scale(.97)}
-  .btn.b1{background:var(--green)}
-  .btn.b2{background:var(--blue)}
-  .steps{
-    text-align:left;
-    margin-top:6px;
-    background:var(--paper);
-    border-radius:12px;
-    padding:13px 15px;
-    font-size:.85rem;
-    line-height:1.7;
-  }
+  a.btn{display:block;width:100%;text-align:center;text-decoration:none;color:#fff;font-size:1rem;font-weight:700;letter-spacing:.05em;padding:14px;border-radius:12px}
+  a.b1{background:var(--green)}
+  a.b2{background:var(--blue)}
+  .steps{background:var(--paper);border-radius:12px;padding:13px 15px;font-size:.85rem;line-height:1.7}
   .steps b{color:var(--blue)}
 </style>
 </head>
@@ -94,241 +29,25 @@
   <div class="head">
     <div class="badge">衛道 209 班</div>
     <h1>班親會導師版行事曆</h1>
-    <p>依你的情況選一個按鈕就好</p>
+    <p>點按鈕直接跳出加入畫面</p>
   </div>
   <div class="body">
-
     <div class="opt">
       <h3>1️⃣ 我之前已經加入過行事曆</h3>
-      <p>只補上班親會導師新公告的 9 筆：作文段考×2、英聽段考、各連假、寒輔。不會跟已加入的重複。</p>
-      <button class="btn b1" id="dl-delta">📅 只加新增的 9 筆</button>
+      <p>只補導師新公告的 9 筆：作文段考×2、英聽段考、各連假、寒輔。不會與已加入的重複。</p>
+      <a class="btn b1" href="delta.ics">📅 一鍵加入新增的 9 筆</a>
     </div>
-
     <div class="opt">
       <h3>2️⃣ 我還沒加入過行事曆</h3>
-      <p>一次加入班親會公告的完整 15 筆：段考、連假、露營、運動會、寒輔、開學日。</p>
-      <button class="btn b2" id="dl-full">📅 加入完整 15 筆</button>
+      <p>一次加入班親會公告完整 15 筆：段考、連假、露營、運動會、寒輔、開學日。</p>
+      <a class="btn b2" href="full.ics">📅 一鍵加入完整 15 筆</a>
     </div>
-
     <div class="steps">
-      <b>⚠️ 請用 Safari 或 Chrome 開啟本頁連結</b>（不要在 LINE / App 內建瀏覽器裡點，若在 App 內請先點「用瀏覽器開啟」）<br><br>
-      <b>🍎 iPhone</b>：點按鈕 → 跳出分享面板 → 選「<b>儲存到檔案</b>」→ 到「檔案」App 點開該檔 → <b>加入全部</b><br>
-      <b>🤖 Android</b>：點按鈕 → 分享或下載 .ics → 用 <b>Google 日曆</b> 開啟 → 儲存（打不開可到電腦版 calendar.google.com → 設定 → 匯入）
+      <b>🍎 iPhone</b>：用 Safari 開本頁 → 點按鈕 → 直接跳出行程預覽 → 點「<b>加入全部</b>」完成<br>
+      <b>🤖 Android</b>：點按鈕下載 → 從通知列點開 → 用 <b>Google 日曆</b> 開啟 → 儲存<br>
+      <b>💡 LINE 內開啟者</b>：請先點右下角「⋯」→「用預設瀏覽器開啟」
     </div>
   </div>
 </div>
-
-<script>
-const HEADER = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Claude//VTSH 209 115-1//ZH
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:衛道209 115-1 行事曆
-X-WR-TIMEZONE:Asia/Taipei
-BEGIN:VTIMEZONE
-TZID:Asia/Taipei
-BEGIN:STANDARD
-DTSTART:19700101T000000
-TZOFFSETFROM:+0800
-TZOFFSETTO:+0800
-TZNAME:CST
-END:STANDARD
-END:VTIMEZONE
-`;
-const FOOTER = `END:VCALENDAR`;
-
-const EV = {
-  moon:`BEGIN:VEVENT
-UID:vtsh-209-115-1-001@claude
-DTSTART;VALUE=DATE:20260925
-DTEND;VALUE=DATE:20260929
-SUMMARY:🥮 中秋節連假(9/25-9/28)
-END:VEVENT
-`,
-  comp1:`BEGIN:VEVENT
-UID:vtsh-209-115-1-002@claude
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261003
-SUMMARY:✍️ 作文第一次段考
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天作文段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  nat:`BEGIN:VEVENT
-UID:vtsh-209-115-1-003@claude
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:🇹🇼 國慶日連假(10/9-10/11)
-END:VEVENT
-`,
-  exam1:`BEGIN:VEVENT
-UID:vtsh-209-115-1-004@claude
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261017
-SUMMARY:📝 第一次段考＋英聽(10/15-10/16)
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:一週後段考
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  retro:`BEGIN:VEVENT
-UID:vtsh-209-115-1-005@claude
-DTSTART;VALUE=DATE:20261024
-DTEND;VALUE=DATE:20261027
-SUMMARY:🎌 光復節連假(10/24-10/26)
-END:VEVENT
-`,
-  camp:`BEGIN:VEVENT
-UID:vtsh-209-115-1-006@claude
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261109
-SUMMARY:⛺ 童軍露營(11/7-11/8)
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:兩天後露營,記得整理裝備
-TRIGGER:-P2D
-END:VALARM
-END:VEVENT
-`,
-  comp2:`BEGIN:VEVENT
-UID:vtsh-209-115-1-007@claude
-DTSTART;VALUE=DATE:20261113
-DTEND;VALUE=DATE:20261114
-SUMMARY:✍️ 作文第二次段考
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天作文段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  listen:`BEGIN:VEVENT
-UID:vtsh-209-115-1-008@claude
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261128
-SUMMARY:🎧 英聽段考(第五節)
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天英聽段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  exam2:`BEGIN:VEVENT
-UID:vtsh-209-115-1-009@claude
-DTSTART;VALUE=DATE:20261201
-DTEND;VALUE=DATE:20261203
-SUMMARY:📝 第二次段考(12/1-12/2)
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:一週後段考
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  sports:`BEGIN:VEVENT
-UID:vtsh-209-115-1-010@claude
-DTSTART;VALUE=DATE:20261211
-DTEND;VALUE=DATE:20261212
-SUMMARY:🏃 運動會
-END:VEVENT
-`,
-  xmas:`BEGIN:VEVENT
-UID:vtsh-209-115-1-011@claude
-DTSTART;VALUE=DATE:20261225
-DTEND;VALUE=DATE:20261228
-SUMMARY:🎄 行憲日連假(12/25-12/27)
-END:VEVENT
-`,
-  ny:`BEGIN:VEVENT
-UID:vtsh-209-115-1-012@claude
-DTSTART;VALUE=DATE:20270101
-DTEND;VALUE=DATE:20270104
-SUMMARY:🎉 元旦連假(1/1-1/3)
-END:VEVENT
-`,
-  exam3:`BEGIN:VEVENT
-UID:vtsh-209-115-1-013@claude
-DTSTART;VALUE=DATE:20270118
-DTEND;VALUE=DATE:20270121
-SUMMARY:📝 第三次段考(1/18-1/20)
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:一週後段考
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:明天段考
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`,
-  winter:`BEGIN:VEVENT
-UID:vtsh-209-115-1-014@claude
-DTSTART;VALUE=DATE:20270121
-DTEND;VALUE=DATE:20270128
-SUMMARY:📚 寒輔一週(1/21-1/27)
-END:VEVENT
-`,
-  open2:`BEGIN:VEVENT
-UID:vtsh-209-115-1-015@claude
-DTSTART;VALUE=DATE:20270211
-DTEND;VALUE=DATE:20270212
-SUMMARY:🏫 第二學期開學
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:提醒
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-`
-};
-
-const FULL_KEYS  = ["moon","comp1","nat","exam1","retro","camp","comp2","listen","exam2","sports","xmas","ny","exam3","winter","open2"];
-const DELTA_KEYS = ["moon","comp1","nat","retro","comp2","listen","xmas","ny","winter"];
-
-function download(keys, filename){
-  const ics = HEADER + keys.map(k=>EV[k]).join("") + FOOTER;
-  const data = ics.replace(/\n/g,'\r\n');
-  const blob = new Blob([data], {type:'text/calendar;charset=utf-8'});
-
-  // 優先用 iOS/Android 分享面板（避免瀏覽器把檔案當文字打開）
-  const file = new File([data], filename, {type:'text/calendar'});
-  if (navigator.canShare && navigator.canShare({files:[file]})){
-    navigator.share({files:[file], title:filename}).catch(()=>{});
-    return;
-  }
-
-  // 備援：一般下載
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(()=>URL.revokeObjectURL(url), 3000);
-}
-
-document.getElementById('dl-delta').addEventListener('click', ()=>download(DELTA_KEYS, '衛道209行事曆_補充9筆.ics'));
-document.getElementById('dl-full').addEventListener('click', ()=>download(FULL_KEYS, '衛道209行事曆_完整15筆.ics'));
-</script>
 </body>
 </html>
